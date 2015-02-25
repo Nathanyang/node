@@ -7,3 +7,26 @@ app.set('view engine', 'jade')
 app.listen(port)
 
 console.log('imooc started on potr ' + port)
+app.get("/", function(req, res){
+	res.render('index', {
+		title: "imooc 首页"
+	})
+})
+
+app.get("/", function(req, res){
+	res.render('detail', {
+		title: "imooc 详情页"
+	})
+})
+
+app.get("/", function(req, res){
+	res.render('list', {
+		title: "imooc 列表页"
+	})
+})
+
+app.get("/", function(req, res){
+	res.render('admin', {
+		title: "imooc 录入页"
+	})
+})
