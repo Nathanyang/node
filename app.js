@@ -13,19 +13,19 @@ app.get("/", function(req, res){
 	})
 })
 
-app.get("/", function(req, res){
+app.get("/movie/:id", function(req, res){
 	res.render('detail', {
 		title: "imooc 详情页"
 	})
 })
 
-app.get("/", function(req, res){
+app.get("/movie", function(req, res){
 	res.render('list', {
 		title: "imooc 列表页"
 	})
 })
 
-app.get("/", function(req, res){
+app.get("/admin/movie", function(req, res){
 	res.render('admin', {
 		title: "imooc 录入页"
 	})
