@@ -8,7 +8,17 @@ block content
           .col-sm-10
             input#inputTitle.form-control(type="text", name="movie[title]", value="#{movie.title}")
 
-		    .form-group
+        .form-group
+          label.col-sm-2.control-label(for="inputDoctor") 导演
+          .col-sm-10
+            input#inputDoctor.form-control(type="text", name="movie[doctor]", value="#{movie.doctor}")
+
+        .form-group
+          label.col-sm-2.control-label(for="inputCountry") 国家
+          .col-sm-10
+            input#inputCountry.form-control(type="text", name="movie[country]", value="#{movie.country}")
+
+        .form-group
           label.col-sm-2.control-label(for="inputLanguage") 语种
           .col-sm-10
             input#inputLanguage.form-control(type="text", name="movie[language]", value="#{movie.language}")
