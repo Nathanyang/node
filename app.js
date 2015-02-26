@@ -52,7 +52,7 @@ app.get('/admin/movie/update/:id', function(req, res){
 	if (id) {
 		Movie.findById(id, function(err, movie) {
 			res.render('admin', {
-				title: 'imooc 后台更新页'，
+				title: 'imooc 后台更新页',
 				movie: movie
 			})
 		})
