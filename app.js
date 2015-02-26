@@ -86,7 +86,7 @@ app.get("/admin/list", function(req, res){
 app.get("/admin/movie", function(req, res){
 	res.render('admin', {
 		title: "imooc 录入页",
-		movies: {
+		movie: {
 			title: '',
 			doctor: '',
 			country: '',
