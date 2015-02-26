@@ -94,9 +94,3 @@ app.get("/admin/movie", function(req, res){
 		}
 	})
 })
-
-app.get("/admin/movie/update/:id", function(req, res){
-	res.render('admin', {
-		title: "imooc 录入页"
-	})
-})
