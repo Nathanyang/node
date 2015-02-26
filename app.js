@@ -186,6 +186,7 @@ app.get("/admin/movie", function(req, res){
 		title: "imooc 录入页",
 		movie: {
 			title: '',
+			_id: '',
 			doctor: '',
 			country: '',
 			year: '',
