@@ -19,7 +19,7 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'bower_components')))
 app.listen(port)
 
-console.log('imooc started on potr ' + port)
+console.log('imooc started on port ' + port)
 
 //home page
 app.get("/", function(req, res){
@@ -62,6 +62,7 @@ app.get('/admin/movie/update/:id', function(req, res){
 //admin post movies
 app.post('/admin/movie/new', function(req, res){
 	var id = req.body.movie._id
+	print(req.body.movie)
 	var movieObj = req.body.movie
 	var _movie
 
