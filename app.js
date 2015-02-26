@@ -1,11 +1,15 @@
 var express = require('express')
+var bodyParser = require('body-parser')
 var path = require('path')
 var port = process.env.PORT || 3000
 var app = express()
 
 app.set('views', './views/pages')
 app.set('view engine', 'jade')
-app.use(express.bodyParser())
+
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
 
 app.use(express.static(path.join(__dirname, 'bower_components')))
 app.listen(port)
