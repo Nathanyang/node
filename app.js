@@ -54,7 +54,7 @@ app.get("/", function(req, res){
 app.get("/movie/:id", function(req, res){
 	res.render('detail', {
 		title: "imooc 详情页",
-		movie: [{
+		movie: {
 			doctor: '尼尔·博格',
 			country: '美国',
 			title: '分歧者:异类觉醒',
@@ -63,7 +63,7 @@ app.get("/movie/:id", function(req, res){
 			language: '英语',
 			flash: 'http://player.youku.com/player.php/sid/XODU1MDE0MjM2/v.swf',
 			summary: '一百年前，席卷全球的战争让几乎所有的国家都从地球上消失，幸存的人类聚集在破败的芝加哥。新世界的创始者为了谋求永久的和平，将幸存者们分成了无私派、诚实派、无畏派、友好派和博学派。每个派系都有自己专门的社会职责，他们通力合作促进这个世界的进步。美丽女孩碧翠丝（谢琳·伍德蕾 饰）出生于无私派家庭，她和其他同龄人一样，将在16岁那年决定自己终身所属的派系。然而测试表明她是一个极为少见的...'
-		}]
+		}
 	})
 })
 
