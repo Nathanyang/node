@@ -71,7 +71,7 @@ app.post('/admin/movie/new', function(req, res){
 			if (err) {
 				console.log(err)
 			}
-			_movie = _.extended(movie, movieObj)
+			_movie = _.extend(movie, movieObj)
 			_movie.save(function(err, movie){
 				if (err) {
 					console.log(err)
