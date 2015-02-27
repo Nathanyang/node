@@ -1,0 +1,25 @@
+{
+  "name": "imooc",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Nathanyang/node",
+  "authors": [
+    "NathanSite <NathanSite@Site.com>"
+  ],
+  "description": "imooc movie",
+  "keywords": [
+    "imooc"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2"
+  }
+}
