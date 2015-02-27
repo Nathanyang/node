@@ -4,6 +4,7 @@ var path = require('path')
 var mongoose = require('mongoose')
 var _ = require('underscore')
 var Movie = require('./models/movie')
+var User = require('./models/user')
 var port = process.env.PORT || 3000
 var app = express()
 var moment = require('moment'); 
@@ -21,6 +22,44 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.listen(port)
 
 console.log('imooc started on port ' + port)
+
+//signup user
+app.post("/user/signup", function(req, res){
+    var _user = req.body.user
+    var user = new User(_user)
+    user.save(function(err, user){
+        if (err) {
+             console.log(err)
+        }
+        res.redirect('/')
+    })
+})
+
+//user list
+app.get("/admin/user/list", function(req, res){
+	User.fetch(function(err, user){
+		if (err) {
+			console.log(err)
+		}
+		res.render('userlist', {
+			titel: "imooc 用户列表",
+			users: user
+		})
+	})
+})
+
+//update user
+app.get("/admin/user/update/:id", function(req, res){
+	var id = req.params.id
+	if (id) {
+		User.findById(id, function(err, movie) {
+			res.render('admin', {
+				title: 'imooc 后台更新用户',
+				user: user
+			})
+		})
+	}
+})
 
 //home page
 app.get("/", function(req, res){
