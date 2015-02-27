@@ -115,6 +115,22 @@ app.get("/admin/list", function(req, res){
 	})
 })
 
+//list delete movie
+app.get("/admin/list", function(req, res){
+	var id = req.params.id
+
+	if (id) {
+		Movie.remove({_id: id}, function(err, movie){
+			if(err){
+				console.log(err)
+			}
+			res.redirect('/admin/list')
+		})
+	} else {
+		res.json({success: 1})
+	}
+})
+
 app.get("/admin/movie", function(req, res){
 	res.render('admin', {
 		title: "imooc 录入页",
