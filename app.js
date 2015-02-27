@@ -66,7 +66,7 @@ app.post('/admin/movie/new', function(req, res){
 	var movieObj = req.body.movie
 	var _movie
 
-	if(id !== 'undefined') {
+	if(id !== 'undefined' || id != 0) {
 		Movie.findById(id, function(err, movie) {
 			if (err) {
 				console.log(err)
