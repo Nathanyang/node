@@ -15,6 +15,7 @@ app.set('view engine', 'jade')
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
+app.use(express.bodyParser());
 
 app.use(express.static(path.join(__dirname, 'bower_components')))
 app.listen(port)
@@ -62,15 +63,10 @@ app.get('/admin/movie/update/:id', function(req, res){
 //admin post movies
 app.post('/admin/movie/new', function(req, res){
 	//var id = req.body.movie._id
-	//print(req.body.movie)
-	console.log('hello')
-			/*for (var i = 0; i < req.body.movie.length ; i++)
-		{
-			console.log(req.body.movie[i] + "\n")
-		}
-	
+
 	var movieObj = req.body.movie
-	var _movie
+		console.log(movieObj)
+/*	var _movie
 
 	if(id !== 'undefined' || id != 0) {
 		Movie.findById(id, function(err, movie) {
