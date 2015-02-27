@@ -17,7 +17,7 @@
     .modal-content
       form(method="post", action="/user/signup")
         .modal-header 注册
-        .modal-boday
+        .modal-body
           .form-group
             label(for="signupName") 用户名
             input#signupName.form-control(name="user[name]", type="text")
@@ -36,7 +36,7 @@
     .modal-content
       form(method="post", action="/user/signin")
         .modal-header 登录
-        .modal-boday
+        .modal-body
           .form-group
             label(for="signinName") 用户名
             input#signinName.form-control(name="user[name]", type="text")
