@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({}))
 // parse application/json
 app.use(bodyParser.json())
 
-app.use(express.static(path.join(__dirname, 'bower_components')))
+app.use(express.static(path.join(__dirname, 'public')))
 app.listen(port)
 
 console.log('imooc started on port ' + port)
