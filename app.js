@@ -125,7 +125,6 @@ app.delete("/admin/list", function(req, res){
 			} else {
 				res.json({success: 1})
 			}
-			res.redirect('/admin/list')
 		})
 	} 
 })
