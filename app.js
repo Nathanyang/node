@@ -12,10 +12,9 @@ mongoose.connect('mongodb://localhost/imooc')
 app.set('views', './views/pages')
 app.set('view engine', 'jade')
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({}))
 // parse application/json
 app.use(bodyParser.json())
-app.use(express.bodyParser());
 
 app.use(express.static(path.join(__dirname, 'bower_components')))
 app.listen(port)
