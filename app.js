@@ -63,11 +63,12 @@ app.get('/admin/movie/update/:id', function(req, res){
 app.post('/admin/movie/new', function(req, res){
 	//var id = req.body.movie._id
 	//print(req.body.movie)
-		for (var i = 0; i < req.body.movie.length ; i++)
+	console.log(req.body.movie)
+			/*for (var i = 0; i < req.body.movie.length ; i++)
 		{
 			console.log(req.body.movie[i] + "\n")
 		}
-		/*
+	
 	var movieObj = req.body.movie
 	var _movie
 
