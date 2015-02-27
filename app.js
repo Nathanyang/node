@@ -61,18 +61,18 @@ app.get("/admin/user/update/:id", function(req, res){
 	}
 })
 
-//del user
-app.get('/admin/user/del/:name', function(req, res){
-	var name = req.params.name
+//list delete movie
+app.delete("/admin/user/del", function(req, res){
+	var name = req.query.name
 	if (name) {
 		User.remove({'name': name}, function(err, user){
 			if(err){
 				console.log(err)
 			} else {
-				res.redirect('/admin/user/list')
+				res.json({success: 1})
 			}
 		})
-	}
+	} 
 })
 
 //home page
