@@ -61,6 +61,20 @@ app.get("/admin/user/update/:id", function(req, res){
 	}
 })
 
+//del user
+app.get('/admin/user/del/:name', function(req, res){
+	var name = req.params.name
+	if (name) {
+		User.remove({'name': name}, function(err, user){
+			if(err){
+				console.log(err)
+			} else {
+				res.redirect('/admin/user/list')
+			}
+		})
+	}
+})
+
 //home page
 app.get("/", function(req, res){
 	Movie.fetch(function(err, movies){
