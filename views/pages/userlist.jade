@@ -13,7 +13,7 @@ block content
             th 删除
         tbody
           each item in users
-            tr(class="item-id-#(item.name)")
+            tr(class="item-id-#{item.name}")
               td #{item.name}
               td #{item.password}
               td: a(href="../user/#{item.name}", target="_blank") 查看
