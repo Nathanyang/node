@@ -61,11 +61,10 @@ app.get('/admin/movie/update/:id', function(req, res){
 
 //admin post movies
 app.post('/admin/movie/new', function(req, res){
-	//var id = req.body.movie._id
+	var id = req.body.movie._id
 
 	var movieObj = req.body.movie
-		console.log(movieObj)
-/*	var _movie
+	var _movie
 
 	if(id !== 'undefined' || id != 0) {
 		Movie.findById(id, function(err, movie) {
@@ -100,7 +99,7 @@ app.post('/admin/movie/new', function(req, res){
 
 			res.redirect('/movie/' + movie._id)
 		})
-	}*/
+	}
 })
 
 app.get("/admin/list", function(req, res){
