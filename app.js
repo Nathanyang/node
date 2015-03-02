@@ -26,12 +26,22 @@ console.log('imooc started on port ' + port)
 //signup user
 app.post("/user/signup", function(req, res){
     var _user = req.body.user
-    var user = new User(_user)
-    user.save(function(err, user){
+
+    user.find({name: _user.name}, function (err, user){
         if (err) {
-             console.log(err)
+            console.log(err)
         }
-        res.redirect('/admin/user/list')
+        if (user) {
+            return res.redirect('/')
+        } else{
+            var user = new User(_user)
+            user.save(function(err, user){
+                if (err) {
+                    console.log(err)
+                }
+                res.redirect('/admin/user/list')
+            })
+        }
     })
 })
 
