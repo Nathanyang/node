@@ -6,7 +6,7 @@
 var http = require("http");
 var redis = require("redis");
 //var client = redis.createClient();
-var client = redis.createClient(6379, "121.40.83.122:3000");
+var client = redis.createClient(6379, "121.40.83.122");
 var i = 1;
 
 http.createServer(
