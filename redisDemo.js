@@ -21,6 +21,6 @@ http.createServer(
             response.end();
         });
         i++;
-    }).listen(80);
+    }).listen(3000);
 
 console.log("服务器开启");
