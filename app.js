@@ -58,7 +58,7 @@ app.post("/user/signin", function(req, res){
         if(!user){
             return res.redirect("/")
         }
-        user.comparePassword(password, function(err, isMatch){
+        User.comparePassword(password, function(err, isMatch){
             if(err) {
                 console.log(err)
             }
