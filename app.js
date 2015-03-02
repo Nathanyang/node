@@ -64,6 +64,7 @@ app.post("/user/signin", function(req, res){
             }
 
             if (isMatch) {
+                console.log("PassWord is matched!")
                 return res.redirect("/")
             } else {
                 console.log("PassWord is not matched!")
