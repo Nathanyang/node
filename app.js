@@ -31,7 +31,7 @@ app.post("/user/signup", function(req, res){
         if (err) {
              console.log(err)
         }
-        res.redirect('/')
+        res.redirect('/admin/user/list')
     })
 })
 
