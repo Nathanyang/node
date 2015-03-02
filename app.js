@@ -27,7 +27,7 @@ console.log('imooc started on port ' + port)
 app.post("/user/signup", function(req, res){
     var _user = req.body.user
 
-    user.find({name: _user.name}, function (err, user){
+    User.find({name: _user.name}, function (err, user){
         if (err) {
             console.log(err)
         }
