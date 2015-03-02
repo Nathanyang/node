@@ -5,8 +5,8 @@
  */
 var http = require("http");
 var redis = require("redis");
-//var client = redis.createClient();
-var client = redis.createClient(6379, "121.40.83.122");
+var client = redis.createClient();
+//var client = redis.createClient(6379, "121.40.83.122");
 var i = 1;
 
 http.createServer(
@@ -16,17 +16,17 @@ http.createServer(
 
         response.write("欢迎您第" + i + "次访问服务器！<br>Welcome!<br>");
 
-        client.on("error", function(err){
+        client.on("error", function (err) {
             console.log("Error: " + err);
         });
 
-        client.on("connect", function(){
+        client.on("connect", function () {
             // start server();
-            client.set("demo2_key", "服务器访问被访问次数: i = " + i, function(){
+            client.set(["demo2_key", "服务器访问被访问次数: i = " + i], function (err, reply) {
                 console.log(reply.toString());
             });
 
-            client.get("demo2_key", function (err, result) {
+            client.get(["demo2_key"], function (err, result) {
                 console.log(result);
                 response.write(result);
                 response.end();
